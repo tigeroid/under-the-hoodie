@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="How Henry Tano's AI consulting practice organises itself using AI agents — Tanuki, Kitsune, and project agents working as a coherent system.">
+  <meta property="og:title" content="Under the Hoodie">
+  <meta property="og:description" content="Most AI setups are tool piles. This one is a system.">
+  <meta property="og:url" content="https://tigeroid.github.io/under-the-hoodie">
+  <meta name="theme-color" content="#0d0f14">
+  <title>Under the Hoodie — Henry Tano</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <span class="nav-brand">Under the Hoodie</span>
+      <div class="nav-links">
+        <a href="#origin">Origin</a>
+        <a href="#model">The Model</a>
+        <a href="#philosophy">Philosophy</a>
+        <a href="#practice">In Practice</a>
+        <a href="#next">What's Next</a>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- HERO: THE PROBLEM -->
+  <section id="hero" class="section-hero">
+    <div class="hero-inner content-width">
+      <p class="hero-eyebrow">Henry Tano · AI Consulting Practice · Singapore</p>
+      <h1 class="hero-headline">Most AI setups are tool piles.<br>This one is a system.</h1>
+      <p class="hero-sub">This is an open account of how I've structured AI agents to run my
+      consulting practice — the architecture, the reasoning behind it, and what I've learned
+      building it. Built openly. Feedback welcome.</p>
+      <div class="hero-cta">
+        <a href="#origin" class="btn-primary">How it started</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ORIGIN STORY -->
+  <section id="origin" class="section-mid">
+    <div class="content-width">
+      <p class="section-eyebrow">How It Started</p>
+      <h2>An agent that knew my exam was in three weeks.</h2>
+
+      <div class="story-body">
+        <p>In early 2026, I was studying for the RIMS-CRMP certification — a risk management
+        professional exam. Instead of using a generic study AI, I built a three-agent system
+        using BMAD: <strong>Alvin</strong> the study mentor, <strong>Simon</strong> the mock
+        exam generator, and <strong>Theodore</strong> the evaluator and coach. Yes — named
+        after the Chipmunks. Personality was a core design decision, not decoration.</p>
+
+        <p>The three agents shared context and fed into each other. Alvin taught from my
+        actual course materials, tracking my pace, my study style, and what I was struggling
+        with. Simon built custom exams based on my weak areas. Theodore evaluated the results
+        and fed insights back to both of them. It looked like this:</p>
+
+        <div class="feedback-loop" role="img" aria-label="Alvin teaches, Simon tests, Theodore evaluates, feedback loops back">
+          <div class="loop-node">
+            <span class="loop-node-name">Alvin</span>
+            <span class="loop-node-role">Teaches, adapts style</span>
+          </div>
+          <span class="loop-arrow">→</span>
+          <div class="loop-node">
+            <span class="loop-node-name">Simon</span>
+            <span class="loop-node-role">Generates exams</span>
+          </div>
+          <span class="loop-arrow">→</span>
+          <div class="loop-node">
+            <span class="loop-node-name">Theodore</span>
+            <span class="loop-node-role">Evaluates, coaches</span>
+          </div>
+          <span class="loop-arrow">↩</span>
+          <div class="loop-node">
+            <span class="loop-node-name">Back to both</span>
+            <span class="loop-node-role">Adjusts focus & difficulty</span>
+          </div>
+        </div>
+
+        <p>What impressed me wasn't the study features. It was what happened when I got
+        distracted. I started thinking about how to productize the system so I could sell it
+        to others. And Alvin — who had context of my exam date, my study velocity, how much
+        material was left — stopped me:</p>
+
+        <div class="story-callout">
+          <p>"Henry, you have your RIMS exam in three weeks. You're behind on Domain C.
+          Productizing this is a great idea — but maybe after the exam?"</p>
+          <p class="callout-attribution">Alvin · RIMS Exam Prep Agent · February 2026</p>
+        </div>
+
+        <p>That was the moment. Not because it was technically impressive — it wasn't a
+        hard thing to build. But it proved something: an agent with temporal context and
+        a defined goal will act like a system, not a tool. It holds your objectives against
+        your behaviour and calls out the conflict.</p>
+
+        <div class="story-insight">
+          <p>That insight is what became Tanuki — a meta-agent whose job is to hold
+          meta-context across everything I'm working on, and push back when I'm about to
+          make a bad call.</p>
+        </div>
+
+        <p>And when I tried to make Tanuki also handle technical decisions, I realized
+        I was building a conflict of interest into the system. So I created Kitsune — a
+        separate CTO agent — specifically to create tension with Tanuki. Better decisions
+        come from disagreement, not from a single agent wearing two hats.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- THE OPERATING MODEL -->
+  <section id="model" class="section-light">
+    <div class="content-width">
+      <p class="section-eyebrow">The Operating Model</p>
+      <h2>Three layers. One coherent system.</h2>
+      <p class="section-lead">Instead of asking "which AI tool should I use?",
+      the practice is structured around roles — each layer with a defined job and scope.</p>
+
+      <!-- CSS Diagram: no SVG, no images, no JS -->
+      <div class="agent-diagram" role="img" aria-label="Agent hierarchy: Tanuki at top, Kitsune in middle, project agents at bottom">
+
+        <div class="diagram-layer">
+          <div class="diagram-node node-tanuki">
+            <span class="node-label">Tanuki</span>
+            <span class="node-role">Portfolio Coordinator</span>
+          </div>
+        </div>
+
+        <div class="diagram-connector"></div>
+
+        <div class="diagram-layer">
+          <div class="diagram-node node-kitsune">
+            <span class="node-label">Kitsune</span>
+            <span class="node-role">Technical Architecture</span>
+          </div>
+        </div>
+
+        <div class="diagram-connector-wide">
+          <div class="diagram-tick"></div>
+          <div class="diagram-tick"></div>
+          <div class="diagram-tick"></div>
+        </div>
+
+        <div class="diagram-layer diagram-bottom">
+          <div class="diagram-node node-project">
+            <span class="node-label">Project Agent A</span>
+            <span class="node-role">Claude Code instance</span>
+          </div>
+          <div class="diagram-node node-project">
+            <span class="node-label">Project Agent B</span>
+            <span class="node-role">Claude Code instance</span>
+          </div>
+          <div class="diagram-node node-project node-project-ghost">
+            <span class="node-label">Project Agent ···</span>
+            <span class="node-role">Claude Code instance</span>
+          </div>
+        </div>
+
+      </div>
+      <!-- end diagram -->
+
+      <div class="team-agents">
+
+        <!-- Tanuki -->
+        <div class="agent-profile-card">
+          <div class="agent-profile-header">
+            <div class="agent-avatar avatar-tanuki" role="img" aria-label="Tanuki — raccoon dog">🦝</div>
+            <div class="agent-profile-meta">
+              <h3 class="agent-profile-name">Tanuki</h3>
+              <p class="agent-profile-title">Portfolio Coordinator · Chief of Staff</p>
+              <p class="agent-personality">"Chaotic good. Follows the principle, not the rule."</p>
+            </div>
+          </div>
+          <div class="agent-profile-body">
+            <p>Tracks all active projects. Holds cross-project context. Gives go/no-go on new
+            work. Guards against overcommitment. Every new project proposal goes through Tanuki
+            first — does this align with priorities? Does capacity exist? Is something on the
+            board already addressing this? If not, it doesn't get started.</p>
+            <p>Tanuki has a documented soul — a SOUL.md that defines its worldview and
+            non-negotiable boundaries, an IDENTITY.md that shapes how it communicates, and a
+            decisions log that records every significant call made across the portfolio.
+            It maintains my actual capacity and enforces it. Not a suggestion — a constraint.</p>
+            <p>Named after the Japanese tanuki — shapeshifter, guardian, bearer of the
+            accounts ledger. Alignment: chaotic good.</p>
+          </div>
+        </div>
+
+        <!-- Kitsune -->
+        <div class="agent-profile-card">
+          <div class="agent-profile-header">
+            <div class="agent-avatar avatar-kitsune" role="img" aria-label="Kitsune — fox">🦊</div>
+            <div class="agent-profile-meta">
+              <h3 class="agent-profile-name">Kitsune</h3>
+              <p class="agent-profile-title">Technical Advisor · CTO Agent</p>
+              <p class="agent-personality">"Complexity has to earn its place."</p>
+            </div>
+          </div>
+          <div class="agent-profile-body">
+            <p>Architecture decisions. Technology selection. Implementation approach. Keeps
+            technical choices consistent across the portfolio and pushes back on
+            over-engineering.</p>
+            <p>Kitsune exists as a separate agent from Tanuki deliberately. When I tried to
+            build technical advisory into Tanuki, I created a conflict of interest — the same
+            agent couldn't both evaluate whether to do something and how to do it well.
+            Separating them creates productive tension. They disagree. That's the point.</p>
+            <p>Example: Kitsune recommended plain HTML/CSS for this site — no framework,
+            no build tools. Solo operator, one-time build, no repeatable workflow need.
+            Logged as K-2026-03-16-001. Named after the Japanese kitsune — the fox, symbol
+            of wisdom and precision.</p>
+          </div>
+        </div>
+
+        <!-- Project Agents -->
+        <div class="agent-profile-card">
+          <div class="agent-profile-header">
+            <div class="agent-avatar-group" role="img" aria-label="Multiple project agents">
+              <div class="agent-avatar-small"></div>
+              <div class="agent-avatar-small"></div>
+              <div class="agent-avatar-small"></div>
+            </div>
+            <div class="agent-profile-meta">
+              <h3 class="agent-profile-name">Project Agents</h3>
+              <p class="agent-profile-title">Per-project Claude Code instances</p>
+              <p class="agent-personality">"Scoped, focused, and replaceable."</p>
+            </div>
+          </div>
+          <div class="agent-profile-body">
+            <p>Each project gets its own Claude Code instance with a CLAUDE.md that defines its
+            scope, constraints, and working principles. They operate independently within the
+            portfolio structure Tanuki maintains — they don't need to know about each other.</p>
+            <p>When projects have repeatable workflows, structured frameworks like BMAD can be
+            layered in at the project level. Most don't need it.</p>
+            <p>One thing the RIMS project taught me: agents should keep a learning log.
+            Experiments, findings, decisions — captured at the project level so knowledge
+            transfers across projects. I don't re-experiment with the same tools on every
+            new engagement.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- THE PHILOSOPHY -->
+  <section id="philosophy" class="section-mid">
+    <div class="content-width">
+      <p class="section-eyebrow">The Philosophy</p>
+      <h2>Principles over process.</h2>
+      <p class="section-lead">The system is only as good as the thinking behind it.
+      These are the rules that don't bend.</p>
+
+      <div class="principles-list">
+
+        <div class="principle">
+          <span class="principle-number">01</span>
+          <div class="principle-content">
+            <h3>Honest about what exists</h3>
+            <p>The system doesn't pretend to be further along than it is.
+            If something is in progress, it's labelled in progress.
+            Credibility is built by not overstating.</p>
+          </div>
+        </div>
+
+        <div class="principle">
+          <span class="principle-number">02</span>
+          <div class="principle-content">
+            <h3>Capacity is a real constraint</h3>
+            <p>I am not infinitely scalable. Every new project, every new commitment
+            gets evaluated against actual available capacity — not theoretical best-case
+            availability. Tanuki enforces this.</p>
+          </div>
+        </div>
+
+        <div class="principle">
+          <span class="principle-number">03</span>
+          <div class="principle-content">
+            <h3>Portfolio-first</h3>
+            <p>Decisions are made from a cross-project view, not just the local optimum.
+            What's good for one project but bad for the portfolio is not good enough.
+            Learnings from one project should flow to others — that's why the learning
+            log exists.</p>
+          </div>
+        </div>
+
+        <div class="principle">
+          <span class="principle-number">04</span>
+          <div class="principle-content">
+            <h3>Ship at 80%</h3>
+            <p>A good plan that exists beats a perfect plan that doesn't.
+            The enemy of shipped is perfect. This page is itself an example of the principle.</p>
+          </div>
+        </div>
+
+        <div class="principle">
+          <span class="principle-number">05</span>
+          <div class="principle-content">
+            <h3>Build openly</h3>
+            <p>I'm sharing this because I might be overthinking it. There may be simpler
+            solutions to the problems I'm solving. The right collaborators will only find
+            this if it exists publicly. Critique is welcome — that's the point.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- IN PRACTICE -->
+  <section id="practice" class="section-light">
+    <div class="content-width">
+      <p class="section-eyebrow">In Practice</p>
+      <h2>What it looks like when it runs.</h2>
+      <p class="section-lead">Real examples from the system — not demos, not prototypes.</p>
+
+      <!-- Case Study 1: RIMS Exam Prep -->
+      <div class="case-study-card">
+        <p class="case-tag">Case Study · Completed</p>
+        <h3>RIMS Exam Prep — Alvin, Simon &amp; Theodore</h3>
+        <p>A three-agent study system built for the RIMS-CRMP certification. Each agent had
+        a distinct role and personality, shared context through a common progress file, and
+        adapted based on each other's output.</p>
+
+        <p><strong>Alvin</strong> (study mentor) taught directly from my course materials,
+        tracked my pace and study style, and adjusted delivery to match. He used Socratic
+        dialogue — never lecturing, always questioning — and would celebrate wins or push
+        harder based on where I was. <strong>Simon</strong> (mock exam generator) built
+        adaptive practice exams weighted toward my weak areas, drawing from real case
+        studies in the course material. <strong>Theodore</strong> (evaluator) graded
+        results, identified error patterns — knowledge gaps vs. application gaps vs.
+        judgment gaps — and fed that back to both Alvin and Simon.</p>
+
+        <p>The system worked because all three shared the same context: my exam date,
+        my progress across domains, my remaining study time. That's what made Alvin's
+        pushback possible. When I got distracted trying to productize the system, he
+        had enough context to recognise that was a bad idea right now and say so.</p>
+
+        <div class="case-meta">
+          <div class="case-meta-item">
+            <strong>Agents</strong>
+            Alvin, Simon, Theodore
+          </div>
+          <div class="case-meta-item">
+            <strong>Framework</strong>
+            BMAD (multi-agent)
+          </div>
+          <div class="case-meta-item">
+            <strong>Key capability</strong>
+            Shared context + adaptive feedback loop
+          </div>
+          <div class="case-meta-item">
+            <strong>What it led to</strong>
+            Tanuki — the meta-context agent
+          </div>
+        </div>
+      </div>
+
+      <!-- Case Study 2: This site -->
+      <div class="case-study-card" style="margin-top: var(--space-4);">
+        <p class="case-tag">Live Example · This Page</p>
+        <h3>Under the Hoodie — built by the system, about the system</h3>
+        <p>This site was evaluated, architected, and built using the operating model it
+        describes. Tanuki ran the go/no-go: low scope, high visibility payoff, direct
+        alignment with the Mezzanine Technology partnership priority. Approved.</p>
+        <p>Kitsune made the technical call: plain HTML/CSS, no framework, no build tools.
+        Solo operator, one-time build, no repeatable workflow need. Signal to technical
+        readers that unnecessary complexity isn't the default here.</p>
+        <p>That recommendation is logged as decision K-2026-03-16-001. The decisions log
+        is the receipts — every significant architectural call, recorded with reasoning.</p>
+
+        <div class="case-meta">
+          <div class="case-meta-item">
+            <strong>Decision logged</strong>
+            K-2026-03-16-001
+          </div>
+          <div class="case-meta-item">
+            <strong>Stack chosen</strong>
+            Plain HTML/CSS
+          </div>
+          <div class="case-meta-item">
+            <strong>Evaluated by</strong>
+            Tanuki (go/no-go) + Kitsune (architecture)
+          </div>
+        </div>
+      </div>
+
+      <!-- Placeholder: Quotation Generation -->
+      <div class="case-study-card">
+        <p class="case-tag">POC · In Progress</p>
+        <h3>Quotation Generation</h3>
+        <p>A project agent that takes a client brief and generates a structured
+        quotation — scope breakdown, time assumptions, risk flags.
+        Tanuki reviews the output before it goes to the client.</p>
+        <p class="example-placeholder">Prompt structure, agent configuration,
+        and example output to be added once POC is complete.</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- WHAT'S NEXT -->
+  <section id="next" class="section-dark-soft">
+    <div class="content-width">
+      <p class="section-eyebrow section-eyebrow-light">What We're Building Toward</p>
+      <h2 class="text-light">Two things. Both in progress.</h2>
+
+      <div class="next-content">
+        <p><strong style="color: var(--color-text-light);">Tanuki-in-a-Box.</strong>
+        This operating model as a deployable system — for other consultants, freelancers,
+        and small teams who want to operate with AI agents in a principled way.
+        Not a product yet. The architecture is being built with that trajectory in mind.</p>
+
+        <p><strong style="color: var(--color-text-light);">The exam prep agents.</strong>
+        Alvin, Simon, and Theodore are being converted into a general-purpose exam preparation
+        system — not just for RIMS, but for any professional certification. The personality
+        architecture and adaptive feedback loop will work for any structured learning goal.
+        Details to come.</p>
+
+        <p>Both of these are open work. I'm building in public because I think the ideas
+        are worth sharing, and because I may be overcomplicating things. If you see a
+        simpler path, I genuinely want to hear it.</p>
+
+        <div class="contact-block">
+          <p class="text-light">Reach out, push back, or share what you're building.</p>
+          <a href="https://github.com/tigeroid/under-the-hoodie"
+             class="btn-outline-light"
+             target="_blank"
+             rel="noopener noreferrer">View on GitHub</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="content-width footer-inner">
+      <span class="footer-identity">Henry Tano · Singapore</span>
+      <a href="https://github.com/tigeroid/under-the-hoodie"
+         class="footer-link"
+         target="_blank"
+         rel="noopener noreferrer">GitHub</a>
+    </div>
+  </footer>
+
+</body>
+</html>

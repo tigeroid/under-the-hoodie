@@ -1,0 +1,9 @@
+# Portfolio internals — not for public repo
+_tanuki_context/
+.claude/
+
+# Debug logs
+*.log
+
+# macOS
+.DS_Store
